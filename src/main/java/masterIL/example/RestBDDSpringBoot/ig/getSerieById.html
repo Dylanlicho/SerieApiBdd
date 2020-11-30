@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        function searchId(){
+            let url = "http://localhost:8081/SerieByIdHtml";
+            url = url + document.getElementById("idSerie").value;
+            window.location.replace(url);
+            alert("on");
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Recherche la série par l'id</title>
+</head>
+<body>
+    <h1>Recherche la série par l'id</h1>
+    <a href="accueil.html"><button>Accueil</button></a>
+    <form method="post" id="form" action="http://localhost:8081/SerieByIdHtml/${id}">
+        Id de la série: <input type="number" name="id" id="id" value="0">
+        <input type="submit" value="Valider">
+    </form>
+</body>
+</html>
