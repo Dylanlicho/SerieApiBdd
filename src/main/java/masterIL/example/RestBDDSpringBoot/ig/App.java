@@ -28,6 +28,12 @@ public class App extends javax.swing.JFrame {
                 Main.goAjouterSerieIG();
             }
         });
+        supprimerUneSerieButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.goSupprimerSerieIG();
+            }
+        });
     }
 
     private JButton rechercheSerieButton;

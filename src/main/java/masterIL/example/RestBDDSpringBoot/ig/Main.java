@@ -15,12 +15,14 @@ public class Main {
     private static App accueilIG;
     private static RechercheSerie rechercheSerieIG;
     private static AjouterSerie ajouterSerieIG;
+    private static SupprimerSerie supprimerSerieIG;
 
     public static void main(String[] args){
 
         accueilIG = new App();
         rechercheSerieIG = new RechercheSerie();
         ajouterSerieIG = new AjouterSerie();
+        supprimerSerieIG = new SupprimerSerie();
 
         accueilIG.setVisible(true);
     }
@@ -47,12 +49,21 @@ public class Main {
         ajouterSerieIG.setVisible(true);
     }
 
+    public static void goSupprimerSerieIG(){
+        accueilIG.setVisible(false);
+        supprimerSerieIG.setVisible(true);
+    }
+
     public static RechercheSerie getRechercheSerieIG() {
         return rechercheSerieIG;
     }
 
     public static AjouterSerie getAjouterSerieIG() {
         return ajouterSerieIG;
+    }
+
+    public static SupprimerSerie getSupprimerSerieIG() {
+        return supprimerSerieIG;
     }
 
     // ---------------------------------  Méthode  ----------------------------------
@@ -94,4 +105,10 @@ public class Main {
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.postForLocation(REST_SERVICE_URI+"addSerie",serie, Serie.class);
     }
+
+    public static void deleteSerieById(int id){
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete(REST_SERVICE_URI+"deleteSerieById/"+id, Serie.class);
+    }
+
 }
