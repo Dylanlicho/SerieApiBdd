@@ -16,6 +16,7 @@ public class Main {
     private static RechercheSerie rechercheSerieIG;
     private static AjouterSerie ajouterSerieIG;
     private static SupprimerSerie supprimerSerieIG;
+    private static Divers diversIG;
 
     public static void main(String[] args){
 
@@ -23,6 +24,7 @@ public class Main {
         rechercheSerieIG = new RechercheSerie();
         ajouterSerieIG = new AjouterSerie();
         supprimerSerieIG = new SupprimerSerie();
+        diversIG = new Divers();
 
         accueilIG.setVisible(true);
     }
@@ -54,6 +56,11 @@ public class Main {
         supprimerSerieIG.setVisible(true);
     }
 
+    public static void goDiversIG(){
+        accueilIG.setVisible(false);
+        diversIG.setVisible(true);
+    }
+
     public static RechercheSerie getRechercheSerieIG() {
         return rechercheSerieIG;
     }
@@ -64,6 +71,10 @@ public class Main {
 
     public static SupprimerSerie getSupprimerSerieIG() {
         return supprimerSerieIG;
+    }
+
+    public static Divers getDiversIG(){
+        return diversIG;
     }
 
     // ---------------------------------  Méthode  ----------------------------------
@@ -108,7 +119,17 @@ public class Main {
 
     public static void deleteSerieById(int id){
         RestTemplate restTemplate = new RestTemplate();
-        restTemplate.delete(REST_SERVICE_URI+"deleteSerieById/"+id, Serie.class);
+        restTemplate.delete(REST_SERVICE_URI+"deleteSerieById/"+id);
+    }
+
+    public static int getNbSerie(){
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.getForObject(REST_SERVICE_URI+"count", Integer.class);
+    }
+
+    public static boolean existById(int id){
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.getForObject(REST_SERVICE_URI+"existSerie/"+id, Boolean.class);
     }
 
 }

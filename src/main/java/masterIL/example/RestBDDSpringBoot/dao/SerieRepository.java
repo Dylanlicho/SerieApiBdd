@@ -8,8 +8,6 @@ import java.util.*;
 @Repository
 public class SerieRepository implements ISerieRepository {
 
-
-    //private List<Serie> listSeries = new ArrayList<Serie>(Arrays.asList(new Serie("Dylan in the round", "Dylan", "Bla bla"), new Serie("First", "David", "Bal bla 2")));
     private List<Serie> listSeries = new ArrayList<Serie>();
 
     @Override
@@ -114,60 +112,4 @@ public class SerieRepository implements ISerieRepository {
         listSeries = new ArrayList<>();
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-
-    @Override
-    public Serie findByName(String name) {
-        Serie res = null;
-        Serie serie;
-        Iterator<Serie> iterator = listSeries.iterator();
-        boolean trouve = false;
-        while(iterator.hasNext() && !trouve){
-            serie = iterator.next();
-            if(serie.getNom().equals(name)){
-                res = serie;
-                trouve = true;
-            }
-        }
-        return res;
-    }
-
-    @Override
-    public void addSerie(Serie serie) {
-        listSeries.add(serie);
-    }
-
-    @Override
-    public void modifySerieByName(String name, Serie nouvelleSerie) {
-        this.deleteSerieByName(name);
-        listSeries.add(nouvelleSerie);
-    }
-
-    @Override
-    public void deleteSerieByName(String name) {
-        Serie serie;
-        Iterator<Serie> iterator = listSeries.iterator();
-        boolean trouve = false;
-        while(iterator.hasNext() && !trouve){
-            serie = iterator.next();
-            if(serie.getNom().equals(name)){
-                iterator.remove();
-                trouve = true;
-            }
-        }
-    }*/
 }

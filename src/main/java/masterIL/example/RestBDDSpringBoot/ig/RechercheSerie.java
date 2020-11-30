@@ -18,6 +18,8 @@ public class RechercheSerie extends javax.swing.JFrame {
 
     public RechercheSerie(){
         this.setContentPane(mainPanel);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.pack();
         initComponent();
     }
 

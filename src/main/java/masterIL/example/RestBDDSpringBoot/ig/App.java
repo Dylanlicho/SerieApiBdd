@@ -11,6 +11,7 @@ public class App extends javax.swing.JFrame {
      */
     public App() {
         this.setContentPane(mainPanel);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         initComponents();
     }
@@ -32,6 +33,12 @@ public class App extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Main.goSupprimerSerieIG();
+            }
+        });
+        diversButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.goDiversIG();
             }
         });
     }

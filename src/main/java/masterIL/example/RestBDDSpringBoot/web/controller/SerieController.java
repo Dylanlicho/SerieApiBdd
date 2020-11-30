@@ -33,7 +33,6 @@ public class SerieController {
     @GetMapping(value = "count")
     public long count(){return dao.count();}
 
-
     @PostMapping(value = "addSerie")
     public void addSerie(@RequestBody Serie serie){
         dao.save(serie);
@@ -44,28 +43,5 @@ public class SerieController {
 
     @DeleteMapping(value = "deleteSerieById/{id}")
     public void deleteSerieById(@PathVariable Integer id){ dao.deleteById(id);}
-
-    /*
-    @PostMapping(value = "addSerieHtml")
-    public Serie addSerieHtml(@ModelAttribute Serie serie){
-        dao.save(serie);
-        return serie;
-    }
-
-    @PostMapping(value = "SerieByIdHtml/{id}")
-    public Optional<Serie> getSerieByIdHtml(@PathVariable Integer id){
-        return dao.findById(id);
-    }
-
-    @DeleteMapping(value = "deleteSerieHtml/{serie}")
-    public void deleteSerieBySerieHtml(@PathVariable Serie serie){ dao.delete(serie);}*/
-
-/*
-    @PutMapping(value = "modifySerieByName/{name}")
-    public void modifiySerie(@PathVariable String name, @RequestBody Serie serie){ dao.modifySerieByName(name, serie);}
-
-    @DeleteMapping(value = "deleteSerieByName/{name}")
-    public void deleteSerieByName(@PathVariable String name){ dao.deleteSerieByName(name);}*/
-
 
 }

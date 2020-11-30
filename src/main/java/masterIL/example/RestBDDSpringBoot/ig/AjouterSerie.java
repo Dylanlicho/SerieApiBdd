@@ -10,7 +10,6 @@ import java.util.Optional;
 public class AjouterSerie extends JFrame{
     private JPanel mainPanel;
     private JButton accueilButton;
-    private JTextField idText;
     private JTextField nomText;
     private JTextField auteurText;
     private JTextArea resumeText;
@@ -18,6 +17,8 @@ public class AjouterSerie extends JFrame{
 
     public AjouterSerie(){
         this.setContentPane(mainPanel);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.pack();
         initComponent();
     }
 

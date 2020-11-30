@@ -14,7 +14,9 @@ public class SupprimerSerie extends JFrame {
     private JButton supprimerButton;
 
     public SupprimerSerie(){
-        this.getContentPane().add(mainPanel);
+        this.setContentPane(mainPanel);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.pack();
         initComponent();
     }
 
@@ -29,7 +31,8 @@ public class SupprimerSerie extends JFrame {
         supprimerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.supprimeSerieById();
+                int id = Integer.parseInt(idText.getText());
+                Main.deleteSerieById(id);
             }
         });
     }
