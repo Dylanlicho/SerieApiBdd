@@ -1,6 +1,5 @@
 package masterIL.example.RestBDDSpringBoot;
 
-import masterIL.example.RestBDDSpringBoot.dao.SerieRepository;
 import masterIL.example.RestBDDSpringBoot.model.Serie;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
